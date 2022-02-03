@@ -1,0 +1,52 @@
+h1,
+h2,
+h3 {
+   font-weight: 500;
+}
+
+.heading {
+   color: var(--black);
+
+   &--xxl {
+      font-weight: 700;
+      line-height: 1.32em;
+      font-size: clamp(1.96rem, 4vw, 2.9rem);
+   }
+
+   &--xl {
+      font-size: clamp(16px, 4vw, 20px);
+      font-weight: 600;
+   }
+
+   &--x {
+      font-size: clamp(19px, 6vw, 37px);
+   }
+
+   &--features {
+      font-size: clamp(18px, 4vw, 30px);
+      font-weight: var(--font-semiBold);
+      margin-bottom: 16px;
+      max-width: 380px;
+   }
+
+   &--operation {
+      font-size: clamp(18px, 3vw, 25px);
+      font-weight: var(--font-semiBold);
+      margin-bottom: 12px;
+   }
+}
+
+.paragraph {
+   color: var(--gray);
+
+   &--features {
+      font-size: clamp(13px, 3vw, 15.7px);
+      line-height: 25px;
+      max-width: 450px;
+   }
+
+   &--operation {
+      font-size: clamp(13px, 3vw, 15px);
+      line-height: 25px;
+   }
+}

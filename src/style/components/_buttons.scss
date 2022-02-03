@@ -1,0 +1,130 @@
+.btn {
+   border: none;
+   cursor: pointer;
+   font-size: 0.9375rem;
+   font-weight: 600;
+   position: relative;
+   transition: background-color 0.3s, border 0.3s ease-in;
+
+   &:focus {
+      outline: none;
+   }
+
+   &:focus-visible {
+      outline: 2px solid var(--red);
+      outline-offset: 3px;
+   }
+
+   &--menu {
+      $root: &;
+      background-color: transparent;
+      z-index: 100;
+
+      @media screen and (min-width: 48em) {
+         display: none;
+      }
+
+      &__bar {
+         background-color: var(--black);
+         display: block;
+         height: 0.25rem;
+         transition-duration: 0.2s;
+         transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+         width: 1.5rem;
+
+         &:not(:last-of-type) {
+            margin-bottom: 0.2rem;
+         }
+      }
+
+      &.active {
+         #{$root}__bar {
+            background-color: var(--white);
+         }
+
+         #{$root}__bar:first-child {
+            transform: rotate(45deg) translate(2px, 5px);
+            transition-delay: 0.15s;
+         }
+
+         #{$root}__bar:nth-child(2) {
+            opacity: 0;
+         }
+
+         #{$root}__bar:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -8px);
+            transition-delay: 0.15s;
+         }
+      }
+   }
+
+   &--white,
+   &--red {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 200px;
+      height: 43px;
+      border-radius: 3px;
+      font-weight: var(--font-Normal);
+
+      @media screen and (min-width: 48em) {
+         width: 102px;
+      }
+   }
+
+   &--white {
+      border: 1px solid rgb(95, 95, 95);
+
+      &:hover {
+         background-color: var(--red);
+         color: var(--white);
+         border: 1px solid var(--red);
+      }
+   }
+
+   &--red {
+      background-color: var(--red);
+      color: var(--white);
+      border: 1px solid var(--red);
+
+      &:hover {
+         background-color: var(--white);
+         color: var(--red);
+      }
+   }
+
+   &--cta,
+   &--more {
+      background-color: var(--red);
+      color: var(--white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 200px;
+      height: 43px;
+      border-radius: 5px;
+      border: 2px solid var(--red);
+      margin-top: 25px;
+
+      &:hover {
+         background-color: var(--white);
+         color: var(--red);
+      }
+   }
+
+   &--open {
+      background-color: var(--red);
+      color: var(--white);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 52px;
+      width: 320px;
+      border-radius: 100px;
+
+      &:hover {
+         background-color: #7a0404;
+      }
+   }
+}
